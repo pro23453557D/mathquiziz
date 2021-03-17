@@ -12,7 +12,7 @@
 
 <body onload="nextquestion()" on="changelogo()">
     <header>
-        <nav><h1 style="font-size:50px; background-color: rgb(35, 31, 32);color:orange"><img src="logo.jpg" width="60" height="50"> School Is Coool</h1</nav>
+        <nav></nav>
     </header>
     <div class="div">
         <div id="question">
@@ -79,6 +79,8 @@
             "question": "10) The population of a town increased from 1,75,000 to 2,62,500 in a decade.<br>The average percent increase of population per year is ?",
             "answer": "<br><br>Answer :- c) 15% <br> Solution:- <br> Average increase = (2,62,500-1,75,000)/10<br>= 87,500/10<br>= 8750 per year<br>Average increase % = (8750/1,75,000)*100<br>= 0.05*100<br>= 5%",
             "opts": " <input name='btn' type='radio'id='but1'> a) 6% &emsp;&emsp;<input name='btn' type='radio' id='but2'> b) 4% &emsp;&emsp;<input name='btn' type='radio' id='but3'> c) 5% &emsp;&emsp;<input name='btn' type='radio' id='but4'> d) 7% "
+        }, {
+            "question": "no more"
         }]
 
         function changelogo() {
@@ -242,8 +244,7 @@
             close_ans()
             images()
             document.getElementById('d').innerHTML = ''
-            pq()
-            nq()
+            checkiflastquestion()
         }
 
         function previousquestion() {
@@ -253,27 +254,18 @@
             close_ans()
             images()
             document.getElementById('d').innerHTML = ''
-            pq()
-            nq()
+            checkiflastquestion()
         }
 
-        function pq() {
+        function checkiflastquestion() {
+            neq = currenquestion + 1
             if (currenquestion == 0) {
-                document.getElementById('pqnq').innerHTML = '<button onclick="nextquestion(),closeimg()" class="nq">next question</button>'
-            } else if (currenquestion > 0 && currenquestion < 9) {
-                document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous Question</button><button onclick="nextquestion(),closeimg()">next question</button>'
-            } else if (currenquestion > 0 && currenquestion <= 9) {
-                document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous Question</button>'
+                document.getElementById('pqnq').innerHTML = '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="nextquestion(),closeimg()" class="nq">next question</button>'
             }
-        }
-
-        function nq() {
-            if (currenquestion == 9) {
-                document.getElementById('nq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous Question</button>'
-            } else if (currenquestion < 9 && currenquestion > 0) {
+            if (qao[neq].question === 'no more') {
+                document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous Question</button>'
+            } else if (currenquestion > 0 && qao[neq].question !== "no more") {
                 document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous Question</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="nextquestion(),closeimg()" class="nq">next question</button>'
-            } else if (currenquestion < 9 && currenquestion >= 0) {
-                document.getElementById('pqnq').innerHTML = '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="nextquestion(),closeimg()" class="nq">next question</button>'
             }
         }
     </script>
