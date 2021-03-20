@@ -1,0 +1,88 @@
+.div {
+    position: relative;
+    top: -25px;
+    background-color: black;
+    color: orange;
+    font-size: 20px;
+}
+
+.opts {
+    color: red;
+}
+
+.workspace1 {
+    background-color: orange;
+    font-size: 25px;
+    color: black;
+}
+
+.answer {
+    color: orange;
+    border: solid;
+    border-color: black;
+    background-color: black;
+    font-size: 30px;
+    position: relative;
+    top: -25px;
+}
+
+.nq {
+    text-align: right;
+    color: gold;
+    background-color: indigo;
+    font-size: 20px;
+}
+
+.pq {
+    text-align: left;
+    color: gold;
+    background-color: indigo;
+    font-size: 20px;
+}
+
+.img1 {
+    height: 100px;
+    position: relative;
+    left: 20px;
+}
+
+.img2 {
+    height: 20px;
+    position: relative;
+    left: 25px;
+    bottom: 40px;
+}
+
+.img3 {
+    height: 100px;
+    position: relative;
+    left: 30px;
+}
+
+.workspace {
+    background-color: lightblue;
+    font-size: 25px;
+    color: black;
+}
+
+.showanswer {
+    background-color: orange;
+    font-size: 25px;
+    color: black;
+}
+
+.closeanswer {
+    background-color: orange;
+    font-size: 25px;
+    color: black;
+}
+
+.submit {
+    background-color: orange;
+    font-size: 25px;
+    color: black;
+}
+
+body {
+    background-color: orange;
+}
