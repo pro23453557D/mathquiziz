@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="ratioandproportion.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="logo" rel="icon" href="logo.jpg" type="image/x-icon">
+    <title>Solved Ratio and Proportion problems</title>
+</head>
+
+<body onload="nextquestion()">
+    <header>
+        <nav>
+            <h1 style="font-size:50px; background-color: rgb(35, 31, 32);color:orange"><img src="logo.jpg" width="60" height="50"> School Is Coool</h1>
+            <h1 style="color: black;font-size:50px;">Topic:- Ratio and Proportion</h1>
+        </nav>
+    </header>
+    <div class="div">
+        <br>
+        <div id="question">
+        </div>
+        <br>
+        <br>
+        <div>
+            <img id="img1" src=".jpg" alt="" class="img1">
+            <img id="img2" src=".jpg" alt="" class="img2">
+            <img id="img3" src=".jpg" alt="" class="img3">
+        </div>
+        <div>
+            <p id="opts" class="opts"></p>
+        </div>
+        &emsp;<button id="Show_answer" class="showanswer" onclick="show_ans()">Show Answer</button>
+        <button onclick="workspace()" class="workspace1" id='work'>Open Workspace</button>
+        <input type="submit" class="submit" onclick="check()">
+        <div id="d" style="text-align: center; font-size: larger; background-color:ghostwhite; color: red;"></div>
+
+    </div>
+    <div id="answer" class="answer"><br></div><br><br><br>
+    <div id="pqnq"></div><br>
+    <div id="note" style="color: orange; background-color: black; font-size: 20px;"></div>
+    <div id="workspace"></div>
+    <script>
+        var qao = [{
+            "question": "&emsp;1) Vijay's salary is ₹8476. If his salary increases in the ratio 4:7, what is his new salary?",
+            "answer": "<br>Answer:-<br>original salary = ₹8476<br>new salary      = (7*8476)/4 = ₹14833",
+            "opts": "<input name='btn' type='radio' id='but1'>₹14823&emsp;&emsp;<input name='btn' type='radio' id='but2'>₹14843&emsp;&emsp;<input name='btn' type='radio' id='but3'> ₹14833&emsp;&emsp;<input name='btn' type='radio' id='but4'> ₹14834"
+        }, {
+            "question": "&emsp;2) To build the Taj Mahal, it took 20000 workers 22 years to build. How many workers will be needed to complete it in 5 years?",
+            "answer": "<br><br>No of workers needed to complete in 5 years = 22*20000 = 5 * x<br>= x = 440000/5<br>= 88000 workers",
+            "opts": "<input name='btn' type='radio' id='but1'>90000 &emsp;&emsp;<input name='btn' type='radio' id='but2'>89000 &emsp;&emsp;<input name='btn' type='radio' id='but3'>87000 &emsp;&emsp;<input name='btn' type='radio' id='but4'>88000"
+        }, {
+            "question": "&emsp;3) The cost of a car and a bike is in the ratio 7:3. If the car costs ₹150000 more. What is the cost of the bike?",
+            "answer": "<br><br>let the cost of bike and car be 3x and 7x<br>7x-3x = 150000<br>4x = 150000<br>x = 37500<br>cost of the bike is : 7*37500<br>= 262500",
+            "opts": "<input name='btn' type='radio' id='but1'>₹262500 &emsp;&emsp;<input name='btn' type='radio' id='but2'>₹272600 &emsp;&emsp;<input name='btn' type='radio' id='but3'>₹262600&emsp;&emsp; <input name='btn' type='radio' id='but4'>₹272700"
+        }, {
+            "question": "&emsp;4) In a 60L mixture the ratio of milk to water is 1:2. If the ratio of the mixture is changed to 2:1, how much more milk should be added?",
+            "answer": "<br><br>Amount of water and milk in mixture = 40,20<br>amount of milk to be added = (2*40)-20<br>= 80-20<br> = 60L",
+            "opts": "<input name='btn' type='radio' id='but1'>20L &emsp;&emsp;<input name='btn' type='radio' id='but2'>30L &emsp;&emsp;<input name='btn' type='radio' id='but3'>50L &emsp;&emsp;<input name='btn' type='radio' id='but4'>60L"
+        }, {
+            "question": '&emsp;5) In the ratio a:b what is "a" called?',
+            "answer": "<br><br>Antecedent",
+            "opts": "<input name='btn' type='radio' id='but1'>antecedent &emsp;&emsp;<input name='btn' type='radio' id='but2'>concequent"
+        }, {
+            "question": "&emsp;6) Find the mean proportion of 6 and 216",
+            "answer": "<br><br>6:x::x:216<br>6*216 = x*x<br>√1296 = x <br>36 = x",
+            "opts": "<input name='btn' type='radio' id='but1'>16 &emsp;&emsp;<input name='btn' type='radio' id='but2'>26 &emsp;&emsp;<input name='btn' type='radio' id='but3'>36 &emsp;&emsp;<input name='btn' type='radio' id='but4'>46"
+        }, {
+            "question": "&emsp;7) a:b = 3:5, b:c = 9:16. what is a:c?",
+            "answer": "<br><br>a:b::b:c<br>= 27:45::45:80<br>= a:b = 27:80",
+            "opts": "<input name='btn' type='radio' id='but1'>3:16 &emsp;&emsp;<input name='btn' type='radio' id='but2'>1:4 &emsp;&emsp;<input name='btn' type='radio' id='but3'>5:16 &emsp;&emsp;<input name='btn' type='radio' id='but4'>27:80 "
+        }, {
+            "question": "&emsp;8) In a bottle of 100ml of slime, the ratio of slime to color is 9:1. If the ratio is made into 3:1, how much more color should be added?",
+            "answer": "<br><br>Amount of color = 10ml<br>amount of glue = 90ml<br>more amount of color to be added = (100/4)-10<br>= 25-10<br>= 15ml",
+            "opts": "<input name='btn' type='radio' id='but1'>10mL &emsp;&emsp;<input name='btn' type='radio' id='but2'>15mL &emsp;&emsp;<input name='btn' type='radio' id='but3'>20mL &emsp;&emsp;<input name='btn' type='radio' id='but4'>25mL"
+        }, {
+            "question": "no more"
+        }]
+
+        var currenquestion = -1
+
+        function show_ans() {
+            document.getElementById('answer').innerHTML = qao[currenquestion].answer
+            document.getElementById('Show_answer').innerHTML = 'Close Answer'
+            document.getElementById('Show_answer').setAttribute('onclick', 'close_ans()')
+            document.getElementById("answer").style.borderColor = "cyan";
+            changespacing()
+        }
+
+        function close_ans() {
+            document.getElementById('answer').innerHTML = '';
+            document.getElementById('Show_answer').innerHTML = 'Show Answer';
+            document.getElementById('Show_answer').setAttribute('onclick', 'show_ans()')
+            document.getElementById("answer").style.borderColor = "black";
+            changespacing1()
+        }
+
+        function closeworkspace() {
+            document.getElementById('note').innerHTML = ''
+            document.getElementById('workspace').innerHTML = ''
+            document.getElementById('work').innerHTML = 'Open Workspace'
+            document.getElementById('work').setAttribute('onclick', 'workspace()')
+        }
+
+        function workspace() {
+            document.getElementById('work').setAttribute('onclick', 'closeworkspace()')
+            document.getElementById('work').innerHTML = 'Close Workspace'
+            document.getElementById('note').innerHTML = 'For calculations use the area below'
+            document.getElementById('workspace').innerHTML = '<textarea name="" class="workspace" id="" cols="94" rows="10"></textarea>'
+            changespacing()
+        }
+
+        function check() {
+            var a = 'Incorrect Answer, '
+            var correct = 'Thats the way to do it👏👏!!!!'
+            var wrong = a + 'Oops try again!!!'
+            var wrong1 = a + 'You can do better!!!'
+            var wrong2 = 'Incorrect Answer ' + '!!!'
+
+            if (currenquestion == 0) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = wrong /*correct or */
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = correct
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                }
+            } else if (currenquestion == 1) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = wrong
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = correct
+                }
+            } else if (currenquestion == 2) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = correct
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = wrong
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                }
+            } else if (currenquestion == 3) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = wrong
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = correct
+                }
+            } else if (currenquestion == 4) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = correct
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = wrong
+                }
+            } else if (currenquestion == 5) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = wrong
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = correct
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                }
+            } else if (currenquestion == 6) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = wrong
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = correct
+                }
+            } else if (currenquestion == 7) {
+                if (document.getElementById('but1').checked) {
+                    document.getElementById('d').innerHTML = wrong
+                } else if (document.getElementById('but2').checked) {
+                    document.getElementById('d').innerHTML = correct
+                } else if (document.getElementById('but3').checked) {
+                    document.getElementById('d').innerHTML = wrong1
+                } else if (document.getElementById('but4').checked) {
+                    document.getElementById('d').innerHTML = wrong2
+                }
+            }
+        }
+
+        function images() {
+            if (currenquestion == 0) {
+                document.getElementById('img1').src = 'full.jpg'
+                document.getElementById('img2').src = 'then.jpg'
+                document.getElementById('img3').src = 'partly_empty.jpg'
+            } else if (currenquestion == 1) {
+                document.getElementById('img1').src = ""
+                document.getElementById('img2').src = ""
+                document.getElementById('img3').src = ""
+            }
+        }
+
+
+
+        function nextquestion() {
+            currenquestion += 1
+            document.getElementById('question').innerHTML = qao[currenquestion].question
+            document.getElementById('opts').innerHTML = qao[currenquestion].opts
+            close_ans()
+            images()
+            document.getElementById('d').innerHTML = ''
+            checkiflastquestion()
+        }
+
+        function previousquestion() {
+            currenquestion -= 1
+            document.getElementById('question').innerHTML = qao[currenquestion].question
+            document.getElementById('opts').innerHTML = qao[currenquestion].opts
+            close_ans()
+            images()
+            document.getElementById('d').innerHTML = ''
+            checkiflastquestion()
+        }
+
+        function changespacing1() {
+            if (currenquestion > 0 && qao[neq].question !== "no more") {
+                document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="nextquestion(),closeimg()" class="nq">next</button>'
+            }
+        }
+
+
+        function changespacing() {
+            if (currenquestion > 0 && qao[neq].question !== "no more") {
+                document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="nextquestion(),closeimg()" class="nq">next</button>'
+            }
+        }
+
+        function checkiflastquestion() {
+            neq = currenquestion + 1
+            if (currenquestion == 0) {
+                document.getElementById('pqnq').innerHTML = '&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="nextquestion(),closeimg()" class="nq">next</button>'
+            }
+            if (qao[neq].question === 'no more') {
+                document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous</button>'
+            } else if (currenquestion > 0 && qao[neq].question !== "no more") {
+                document.getElementById('pqnq').innerHTML = '<button onclick="previousquestion()" class="pq">Previous</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="nextquestion(),closeimg()" class="nq">next</button>'
+            }
+        }
+    </script>
+    <footer></footer>
+</body>
+
+</html>
